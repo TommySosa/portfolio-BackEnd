@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,24 +43,25 @@ public class PersonaController {
         return new ResponseEntity(persona, HttpStatus.OK);
     }
     
-    /*
+    
     @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody DtoPersona dtoeduc) {
-        if (StringUtils.isBlank(dtoeduc.getNombre())) {
+    public ResponseEntity<?> create(@RequestBody DtoPersona dtopers) {
+        if (StringUtils.isBlank(dtopers.getNombre())) {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
             
         }
-        if (sPersona.existsByNombreE(dtoeduc.getNombre())) {
+        if (sPersona.existsByNombre(dtopers.getNombre())) {
             return new ResponseEntity(new Mensaje("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
         }
         Persona persona = new Persona(
-                dtoeduc.getNombre(), dtoeduc.getDescripcion()
+                dtopers.getNombre(),dtopers.getApellido(), dtopers.getDescripcion(), dtopers.getTitulo(), dtopers.getImg()
         );
         
         sPersona.save(persona);
         
-        return new ResponseEntity(new Mensaje("Educación creada"), HttpStatus.OK);
-    } */
+        return new ResponseEntity(new Mensaje("Persona creada"), HttpStatus.OK);
+    } 
+    
     
     
     @PutMapping("/update/{id}")
