@@ -6,10 +6,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.Size;
 
 @Entity
-public class HardSkills {
+public class SoftSkills {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -17,16 +16,13 @@ public class HardSkills {
     @Min(1)
     @Max(100)
     private int porcentaje;
-    @Size(min= 1, max= 255, message="No cumple con la longitud")
-    private String img;
 
-    public HardSkills() {
+    public SoftSkills() {
     }
 
-    public HardSkills(String nombre, int porcentaje, String img) {
+    public SoftSkills(String nombre, int porcentaje) {
         this.nombre = nombre;
         this.porcentaje = porcentaje;
-        this.img = img;
     }
 
     public int getId() {
@@ -41,14 +37,6 @@ public class HardSkills {
         return nombre;
     }
 
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
-    }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -60,6 +48,7 @@ public class HardSkills {
     public void setPorcentaje(int porcentaje) {
         this.porcentaje = porcentaje;
     }
+    
     
     
 }

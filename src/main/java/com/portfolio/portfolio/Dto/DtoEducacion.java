@@ -9,13 +9,23 @@ public class DtoEducacion {
     private String nombreE;
     @NotBlank
     private String descripcionE;
+    private String img;
 
     public DtoEducacion() {
     }
 
-    public DtoEducacion(String nombreE, String descripcionE) {
+    public DtoEducacion(String nombreE, String descripcionE, String img) {
         this.nombreE = nombreE;
         this.descripcionE = descripcionE;
+        this.img = img;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public String getNombreE() {

@@ -3,23 +3,19 @@ package com.portfolio.portfolio.Dto;
 import javax.validation.constraints.NotBlank;
 
 
-public class DtoHardSkills {
+public class DtoSoftSkills {
     @NotBlank
     private String nombre;
     @NotBlank
     private int porcentaje;
-    @NotBlank
-    private String img;
 
+    public DtoSoftSkills() {
+    }
     
 
-    public DtoHardSkills() {
-    }
-
-    public DtoHardSkills(String nombre, int porcentaje, String img) {
+    public DtoSoftSkills(String nombre, int porcentaje) {
         this.nombre = nombre;
         this.porcentaje = porcentaje;
-        this.img = img;
     }
 
     public String getNombre() {
@@ -38,14 +34,7 @@ public class DtoHardSkills {
         this.porcentaje = porcentaje;
     }
     
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
-    }
-   
+    
     
     
 }
