@@ -47,6 +47,7 @@ com\portfolio\portfolio\security\DTO\JwtDto.class
 com\portfolio\portfolio\security\jwt\JwtProvider.class
 com\portfolio\portfolio\security\enums\RolNombre.class
 com\portfolio\portfolio\service\SoftSkillService.class
+com\portfolio\portfolio\WebConfig.class
 com\portfolio\portfolio\entity\Persona.class
 com\portfolio\portfolio\security\controller\AuthController.class
 com\portfolio\portfolio\security\repository\IRolRepository.class
